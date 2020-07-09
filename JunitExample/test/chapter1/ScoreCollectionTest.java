@@ -1,6 +1,8 @@
 package chapter1;
 
+import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.hamcrest.CoreMatchers.*;
 
 import org.junit.jupiter.api.Test;
 
@@ -19,7 +21,25 @@ class ScoreCollectionTest {
 		// fail("Not yet implemented");
 		
 		// 성공시에는 초록색 막대로 표시됨.
-		System.out.println("success");
+		// System.out.println("success");
+		
+		
+	}
+	
+	@Test
+	public void answersArithmeticMeanOfTwoNumbers() {
+		// arrange
+		ScoreCollection collection = new ScoreCollection();
+		collection.add(() -> 5);
+		collection.add(() -> 7);
+		
+		// act
+		// 테스트를 준비한 후 검증하려는 코드를 실행한다.
+		int actualResult = collection.arithmeticMean();
+		
+		// assert
+		// 마지막으로 기대하는 결과를 단언한다.
+		assertThat(actualResult, equalTo(3));
 	}
 
 }
